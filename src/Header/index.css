@@ -1,0 +1,10 @@
+.logo__pic {
+    width: 70px;
+    height: 60px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
