@@ -2,9 +2,17 @@ import React, { useState } from 'react'
 import mockedData from './../data.json'
 import './style.css'
 
-export const List = () => {
+export const List = ({children}) => {
+
+
 
   const [msg, setMsg] = useState(mockedData)
+
+  const newFolder = () => {
+    setMsg(
+      mockedData.filter((el) => el.status == "new")
+    )
+  }
 
 
   const incomingMsg = () => {
@@ -38,7 +46,9 @@ export const List = () => {
 
   return (
     <div>
+      
       <div className='sort'>
+      
         <div
           onClick={() => {
             incomingMsg()
@@ -73,14 +83,22 @@ export const List = () => {
           }}>
           Спам
         </div>
-      </div>
 
+        
+        <div onClick={()=> {
+          newFolder()
+        }} className='child'>{children}</div>
+
+
+      </div>
+          
       <div className='list'>
         {msg.map((item) => (
           <div key={item.id} className='content container'>
             {item.author} {item.text} {item.time}
           </div>
         ))}
+        
       </div>
 
     </div>
