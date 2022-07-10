@@ -1,37 +1,21 @@
-
-import { useState } from 'react';
 import './App.css';
-import { Folder } from './Folder';
+import { Folder } from './AddFolder';
 import { Header } from './Header';
 import { List } from './List';
-
-
-
+import { useState } from 'react'
 
 
 function App() {
-  const [state, setState] = useState([])
-  
+
+  const [folder, setFolder] = useState([])
 
 
   return (
     <div className="App">
 
-      <Header state={state} setState={setState}  />
-
-      <List>
-        <div className='put-folder'>
-        
-        
-         { 
-         
-          state.map((item) => (
-            
-            <Folder key={item.id} name={item.name} state={state} setState={setState} />
-          ))
-         } 
-        </div>
-      </List>
+      <Header  />
+      <List folder={folder} setFolder={setFolder} />
+      <Folder folder={folder} setFolder={setFolder} />
 
     </div>
   );

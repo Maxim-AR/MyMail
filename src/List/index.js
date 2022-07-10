@@ -1,19 +1,46 @@
 import React, { useState } from 'react'
 import mockedData from './../data.json'
 import './style.css'
+import { Button } from 'react-bootstrap';
 
-export const List = ({children}) => {
 
+export const List = ({ folder, setFolder }) => {
 
+  const [edit, setEdit] = useState(null)
+  const [value, setValue] = useState('')
 
   const [msg, setMsg] = useState(mockedData)
 
-  const newFolder = () => {
+  const deleteFolder = (id) => {
+    let newFolder = [...folder].filter(item => item.id != id)
+    setFolder(newFolder)
+
+  }
+
+
+
+
+  const editFolder = (id, title) => {
+    setEdit(id)
+    setValue(title)
+  }
+
+  const saveFolderChange = (id) => {
+    let newFolder = [...folder].map(item => {
+      if (item.id == id) {
+        item.title = value
+      }
+      return item
+    })
+    setFolder(newFolder)
+    setEdit(null)
+  }
+
+  const newFolderMsg = () => {
     setMsg(
       mockedData.filter((el) => el.status == "new")
     )
   }
-
 
   const incomingMsg = () => {
     setMsg(
@@ -46,9 +73,9 @@ export const List = ({children}) => {
 
   return (
     <div>
-      
+
       <div className='sort'>
-      
+
         <div
           onClick={() => {
             incomingMsg()
@@ -83,22 +110,45 @@ export const List = ({children}) => {
           }}>
           Спам
         </div>
+        <div onClick={() => newFolderMsg()}>
+          {
+            folder.map((item) => (
+              <div key={item.id} >
+                {
+                  edit === item.id ?
+                    <div>
+                      <input value={value} onChange={(el) => setValue(el.target.value)} />
+                    </div>
+                    :
+                    <div>{item.title}</div>
+                }
+                {
+                  edit === item.id ?
+                    <div>
+                      <Button onClick={() => saveFolderChange(item.id)}>сохр</Button>
 
-        
-        <div onClick={()=> {
-          newFolder()
-        }} className='child'>{children}</div>
+                    </div> :
+                    <div>
+                      <Button onClick={() => deleteFolder(item.id)}>удал</Button>
+                      <Button onClick={() => editFolder(item.id, item.title)}>изм</Button>
 
+
+                    </div>
+                }
+              </div>
+            ))
+          }
+        </div>
 
       </div>
-          
+
       <div className='list'>
         {msg.map((item) => (
           <div key={item.id} className='content container'>
             {item.author} {item.text} {item.time}
           </div>
         ))}
-        
+
       </div>
 
     </div>
