@@ -1,23 +1,19 @@
 import React, { useState } from 'react'
-import mockedData from './../data.json'
 import './style.css'
 import { Button } from 'react-bootstrap';
 
 
-export const List = ({ folder, setFolder }) => {
+export const List = ({ folder, setFolder, msg, setMsg, mockedData }) => {
 
   const [edit, setEdit] = useState(null)
   const [value, setValue] = useState('')
 
-  const [msg, setMsg] = useState(mockedData)
 
   const deleteFolder = (id) => {
     let newFolder = [...folder].filter(item => item.id != id)
     setFolder(newFolder)
 
   }
-
-
 
 
   const editFolder = (id, title) => {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Row, Col, Button, FormControl } from 'react-bootstrap'
 
-export const Folder = ({folder, setFolder}) => {
+export const AddFolder = ({ folder, setFolder }) => {
 
   const [value, setValue] = useState('')
 
@@ -13,19 +13,19 @@ export const Folder = ({folder, setFolder}) => {
     }
 
     const newFolder = [...folder, {
-      id:uniqid,
+      id: uniqid,
       title: value
     }]
     setFolder(newFolder)
     setValue('')
   }
 
-    return (
-      <Row>
+  return (
+    <Row>
       <Col >
-          <FormControl placeholder='Введите название папки' value={value} onChange={(e) => setValue(e.target.value)} />
-          <Button  onClick={saveFolder}>Save</Button>
+        <FormControl placeholder='Введите название папки' value={value} onChange={(e) => setValue(e.target.value)} />
+        <Button onClick={saveFolder}>Save</Button>
       </Col>
-  </Row>
-    )
+    </Row>
+  )
 }

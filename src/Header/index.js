@@ -2,19 +2,17 @@ import React from 'react'
 import logo from './../logo.png'
 import './index.css'
 
-export const Header = () => {
+export const Header = ({children}) => {
   
-  
-
 
 
   return (
     <header className='header'>
-        <div className='logo'>
+        <div className='header__logo'>
             <img src={logo} alt='MAIL' className='logo__pic' />
         </div>
-        <div className='search'>
-            <input type='text' placeholder='Поиск' className='search__input'/>
+        <div>
+          {children}
         </div>
     </header>
   )
