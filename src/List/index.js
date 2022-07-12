@@ -138,14 +138,17 @@ export const List = ({ folder, setFolder, msg, setMsg, mockedData }) => {
 
       </div>
 
-      <div className='list'>
-        {msg.map((item) => (
-          <div key={item.id} className='content container'>
-            {item.author} {item.text} {item.time}
-          </div>
-        ))}
-
-      </div>
+      <table className='list'>
+        <tbody>
+          {msg.map((item) => (
+            <tr key={item.id} className='list__table'>
+              <td>{item.author}</td>
+              <td>{item.text}</td>
+              <td> {item.time}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
 
     </div>
   )

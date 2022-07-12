@@ -1,4 +1,6 @@
-
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0 auto;
@@ -15,5 +17,7 @@ code {
 }
 
 .App {
-  padding: 15px;
+  max-width: 1200px;
+  padding: 0px 15px;
+  margin: 0px auto;
 }

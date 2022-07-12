@@ -36,8 +36,9 @@ function App() {
       <Header>
         <Search handleChange={handleChange} />
       </Header>
-      <List folder={folder} setFolder={setFolder} msg={msg} setMsg={setMsg} mockedData={mockedData} />
       <AddFolder folder={folder} setFolder={setFolder} />
+      <List folder={folder} setFolder={setFolder} msg={msg} setMsg={setMsg} mockedData={mockedData} />
+      
 
     </div>
   );
