@@ -1,18 +1,36 @@
-.container {
-    display: flex;
-    flex-flow: row wrap;
-    font-weight: bold;
-    text-align: center;
-
-
-}
 
 .sort {
-    justify-items: start;
+    
+    cursor: pointer;
+    min-height: 500px;
+    width: 30%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
 }
 
 .list {
-    grid-area: C;
-row-gap: 50px;
+
+    min-height: 500px;
+    width: 70%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    text-align: left;
+
 }
+
+table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+ td, tr {
+    border: 1px solid rgb(98, 96, 96);
+    padding: 5px 15px;
+ }
 
