@@ -124,13 +124,17 @@ export const List = ({ folder, setFolder, msg, setMsg, mockedData, saveInLS }) =
                 }
                 {
                   edit === item.id ?
-                    <div>
-                      <button className='btn btn-outline-secondary' onClick={() => saveFolderChange(item.id)}>Сохранить</button>
+                    <div className='edit'>
+                      <button className='btn btn-outline-secondary btn-sm' onClick={() => saveFolderChange(item.id)}>Сохранить</button>
 
                     </div> :
-                    <div>
-                      <button className='btn btn-outline-secondary' onClick={() => deleteFolder(item.id)}>Удалить</button>
-                      <button className='btn btn-outline-secondary' onClick={() => editFolder(item.id, item.title)}>Изменить</button>
+                    <div className='edit'>
+                      <div >
+                      <button className='btn btn-outline-secondary btn-sm ' onClick={() => deleteFolder(item.id)}>Удалить</button>
+                      </div>
+                      <div>
+                      <button className='btn btn-outline-secondary btn-sm' onClick={() => editFolder(item.id, item.title)}>Изменить</button>
+                      </div>
                     </div>
                 }
               </div>
