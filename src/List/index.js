@@ -109,18 +109,18 @@ export const List = ({ folder, setFolder, msg, setMsg, mockedData, saveInLS }) =
           }}>
           Спам
         </div>
-        <div  className='activ'
+        <div  
         onClick={() => newFolderMsg()}>
           {
             folder.map((item) => (
-              <div key={item.id} >
+              <div  key={item.id} >
                 {
                   edit === item.id ?
                     <div>
-                      <input value={value} onChange={(el) => setValue(el.target.value)} />
+                      <input className='input__folder__edit' value={value} onChange={(el) => setValue(el.target.value)} />
                     </div>
                     :
-                    <div>{item.title}</div>
+                    <div className='activ'>{item.title}</div>
                 }
                 {
                   edit === item.id ?
