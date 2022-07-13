@@ -1,16 +1,21 @@
 .logo__pic {
     width: 70px;
     height: 60px;
+border-radius: 25px;
+
 }
+
 
 .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: rgba(63, 92, 254, 0.953);
-
     margin-bottom: 15px;
+    padding: 5px;
+}
 
-    padding-bottom: 15px;
-
+.header__logo {
+    display: flex;
+    flex-direction: row;
 }

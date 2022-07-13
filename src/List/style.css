@@ -1,7 +1,5 @@
 
 .sort {
-    
-    cursor: pointer;
     min-height: 500px;
     width: 30%;
     float: left;
@@ -9,6 +7,30 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 15px;
+}
+
+.activ:empty {
+    display: none;
+}
+
+.activ {
+    cursor:pointer;
+    background-color: rgba(63, 92, 254, 0.953);
+    display:block;
+    text-align:center;
+    margin-top:8px;
+    width:150px;
+    height:31px;
+    border-radius:5px;
+    border-width:1px;
+    border-style:solid;
+
+}
+
+.activ:hover {
+    background-color: #09e063;
+    box-shadow: 0 16px 36px rgba(246 152 12 / 20%);
+    transition: background-color 0.3s ease-in;
 }
 
 .list {
@@ -34,3 +56,6 @@ table {
     padding: 5px 15px;
  }
 
+ .edit button {
+
+ }

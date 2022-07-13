@@ -6,7 +6,7 @@ export const Search = ({handleChange}) => {
 
   return (
     <div className='search'>
-        <input onChange={handleChange} />
+        <input placeholder='Поиск' onChange={handleChange} />
     </div>
   )
 }

@@ -72,41 +72,42 @@ export const List = ({ folder, setFolder, msg, setMsg, mockedData }) => {
 
       <div className='sort'>
 
-        <div
+        <div className='activ'
           onClick={() => {
             incomingMsg()
           }}>
           Входящие
         </div>
 
-        <div
+        <div className='activ'
           onClick={() => {
             sentMsg()
           }}>
           Отправленные
         </div>
 
-        <div
+        <div className='activ'
           onClick={() => {
             draftMsg()
           }}>
           Черновик
         </div>
 
-        <div
+        <div className='activ'
           onClick={() => {
             deletedMsg()
           }}>
           Удаленные
         </div>
 
-        <div
+        <div className='activ'
           onClick={() => {
             spamMsg()
           }}>
           Спам
         </div>
-        <div onClick={() => newFolderMsg()}>
+        <div  className='activ'
+        onClick={() => newFolderMsg()}>
           {
             folder.map((item) => (
               <div key={item.id} >
@@ -121,14 +122,12 @@ export const List = ({ folder, setFolder, msg, setMsg, mockedData }) => {
                 {
                   edit === item.id ?
                     <div>
-                      <button onClick={() => saveFolderChange(item.id)}>сохр</button>
+                      <button className='btn btn-outline-secondary' onClick={() => saveFolderChange(item.id)}>Сохранить</button>
 
                     </div> :
                     <div>
-                      <button onClick={() => deleteFolder(item.id)}>удал</button>
-                      <button onClick={() => editFolder(item.id, item.title)}>изм</button>
-
-
+                      <button className='btn btn-outline-secondary' onClick={() => deleteFolder(item.id)}>Удалить</button>
+                      <button className='btn btn-outline-secondary' onClick={() => editFolder(item.id, item.title)}>Изменить</button>
                     </div>
                 }
               </div>
