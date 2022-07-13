@@ -1,6 +1,18 @@
-.sort {
+.container {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    cursor: pointer;
+    flex-flow: row wrap;
+    font-weight: bold;
+    text-align: center;
+
+
 }
+
+.sort {
+    justify-items: start;
+}
+
+.list {
+    grid-area: C;
+row-gap: 50px;
+}
+

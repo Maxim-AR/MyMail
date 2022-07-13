@@ -1,4 +1,6 @@
-
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0 auto;
@@ -12,8 +14,4 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-.App {
-  padding: 15px;
 }

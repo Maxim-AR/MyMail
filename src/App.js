@@ -1,4 +1,4 @@
-import './App.css';
+
 import { AddFolder } from './AddFolder';
 import { Header } from './Header';
 import { List } from './List';
@@ -31,13 +31,14 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div className="appContainer">
 
       <Header>
         <Search handleChange={handleChange} />
       </Header>
-      <List folder={folder} setFolder={setFolder} msg={msg} setMsg={setMsg} mockedData={mockedData} />
       <AddFolder folder={folder} setFolder={setFolder} />
+      <List folder={folder} setFolder={setFolder} msg={msg} setMsg={setMsg} mockedData={mockedData} />
+      
 
     </div>
   );

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Row, Col, Button, FormControl } from 'react-bootstrap'
+import './style.css'
 
 export const AddFolder = ({ folder, setFolder }) => {
 
@@ -7,7 +7,8 @@ export const AddFolder = ({ folder, setFolder }) => {
 
   var uniqid = Date.now()
 
-  const saveFolder = () => {
+  const saveFolder = (event) => {
+     event.preventDefault()
     if (!value) {
       return
     }
@@ -21,11 +22,11 @@ export const AddFolder = ({ folder, setFolder }) => {
   }
 
   return (
-    <Row>
-      <Col >
-        <FormControl placeholder='Введите название папки' value={value} onChange={(e) => setValue(e.target.value)} />
-        <Button onClick={saveFolder}>Save</Button>
-      </Col>
-    </Row>
+    <form className='form'>
+      
+        <input placeholder='Введите название папки' value={value} onChange={(e) => setValue(e.target.value)} />
+        <button onClick={saveFolder}>Save</button>
+      
+    </form>
   )
 }

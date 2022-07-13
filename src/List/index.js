@@ -68,7 +68,7 @@ export const List = ({ folder, setFolder, msg, setMsg, mockedData }) => {
 
 
   return (
-    <div>
+    <div className='container'>
 
       <div className='sort'>
 
@@ -121,12 +121,12 @@ export const List = ({ folder, setFolder, msg, setMsg, mockedData }) => {
                 {
                   edit === item.id ?
                     <div>
-                      <Button onClick={() => saveFolderChange(item.id)}>сохр</Button>
+                      <button onClick={() => saveFolderChange(item.id)}>сохр</button>
 
                     </div> :
                     <div>
-                      <Button onClick={() => deleteFolder(item.id)}>удал</Button>
-                      <Button onClick={() => editFolder(item.id, item.title)}>изм</Button>
+                      <button onClick={() => deleteFolder(item.id)}>удал</button>
+                      <button onClick={() => editFolder(item.id, item.title)}>изм</button>
 
 
                     </div>
