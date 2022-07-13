@@ -8,9 +8,14 @@ import { Search } from './Search';
 
 function App() {
 
-  const [folder, setFolder] = useState([])
+  const [folder, setFolder] = useState(localStorage.getItem('folders') ? JSON.parse(localStorage.getItem('folders')) : [])
   const [msg, setMsg] = useState(mockedData)
   const [inputValue, setInputValue] = useState('')
+
+  const saveInLS = (newFolder) => {
+    setFolder(newFolder);
+    localStorage.setItem('folders', JSON.stringify(newFolder))
+  }
 
   const handleChange = (event) => {
     const {
@@ -36,8 +41,8 @@ function App() {
       <Header>
         <Search handleChange={handleChange} />
       </Header>
-      <AddFolder folder={folder} setFolder={setFolder} />
-      <List folder={folder} setFolder={setFolder} msg={msg} setMsg={setMsg} mockedData={mockedData} />
+      <AddFolder folder={folder} setFolder={setFolder} saveInLS={saveInLS} />
+      <List folder={folder} setFolder={setFolder} msg={msg} setMsg={setMsg} mockedData={mockedData} saveInLS={saveInLS} />
       
 
     </div>

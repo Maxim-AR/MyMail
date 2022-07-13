@@ -3,7 +3,7 @@ import './style.css'
 import { Button } from 'react-bootstrap';
 
 
-export const List = ({ folder, setFolder, msg, setMsg, mockedData }) => {
+export const List = ({ folder, setFolder, msg, setMsg, mockedData, saveInLS }) => {
 
   const [edit, setEdit] = useState(null)
   const [value, setValue] = useState('')
@@ -12,6 +12,7 @@ export const List = ({ folder, setFolder, msg, setMsg, mockedData }) => {
   const deleteFolder = (id) => {
     let newFolder = [...folder].filter(item => item.id != id)
     setFolder(newFolder)
+    saveInLS(newFolder)
 
   }
 
@@ -19,6 +20,7 @@ export const List = ({ folder, setFolder, msg, setMsg, mockedData }) => {
   const editFolder = (id, title) => {
     setEdit(id)
     setValue(title)
+
   }
 
   const saveFolderChange = (id) => {
@@ -30,6 +32,7 @@ export const List = ({ folder, setFolder, msg, setMsg, mockedData }) => {
     })
     setFolder(newFolder)
     setEdit(null)
+    saveInLS(newFolder)
   }
 
   const newFolderMsg = () => {

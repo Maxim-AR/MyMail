@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 
 import './style.css'
 
-export const AddFolder = ({ folder, setFolder }) => {
+export const AddFolder = ({ folder, setFolder, saveInLS }) => {
 
   const [value, setValue] = useState('')
 
@@ -21,6 +21,7 @@ export const AddFolder = ({ folder, setFolder }) => {
     }]
     setFolder(newFolder)
     setValue('')
+    saveInLS(newFolder)
   }
 
   return (
